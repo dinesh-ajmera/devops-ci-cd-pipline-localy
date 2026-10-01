@@ -19,7 +19,7 @@ kind: Deployment
 metadata :
   name : webdeploy
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchExpressions:
       - { key : app , operator : In , values: [mywebsite] }
