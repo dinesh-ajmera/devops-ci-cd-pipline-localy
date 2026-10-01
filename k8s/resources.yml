@@ -10,7 +10,7 @@ spec:
   selector:
     app: mywebsite
   type: NodePort
-  NodePort: 30033
+
 
 ---
 
