@@ -1,6 +1,6 @@
-from redhat/ubi:8
+from redhat/ubi8
 
-run yum inatall httpd -y && systemctl start httpd
+run yum install httpd -y && systemctl start httpd
 
 workdir /var/www/html
 
