@@ -1,0 +1,39 @@
+apiVersion: v1
+kind : Service
+metadata:
+  name : mywebsite
+  labels:
+    app: mywebsite
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: mywebsite
+  type: NodePort
+  NodePort: 30033
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata :
+  name : webdeploy
+spec:
+  replicas: 2
+  selector:
+    matchExpressions:
+      - { key : app , operator : In , values: [mywebsite] }
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: mywebsite
+    spec:
+      containers:
+      - name : mywebsite
+        image: dineshajmera/myweb:latest
+        
+        ports:
+        - containerPort: 80
+        
