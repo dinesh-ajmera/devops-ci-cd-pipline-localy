@@ -1,5 +1,8 @@
-from httpd:latest  
-workdir /var/www/html
+from redhat/ubi9
+run yum install https
+workdir /var/www/html/
 
-copy index.html ./
+copy index.html .
+
+cmd["httpd" ,"-d", "FOREGROUND"
 
