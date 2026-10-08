@@ -1,8 +1,5 @@
-from redhat/ubi9
-run yum install httpd -y
-workdir /var/www/html/
+from vima13/apache-webserver-php 
 
-copy index.html .
+copy *.html .
 
-cmd ["httpd" ,"-d", "FOREGROUND"]
 
