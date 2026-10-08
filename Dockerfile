@@ -4,5 +4,5 @@ workdir /var/www/html/
 
 copy index.html .
 
-cmd["httpd" ,"-d", "FOREGROUND"
+cmd ["httpd" ,"-d", "FOREGROUND"]
 
