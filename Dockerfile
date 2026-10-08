@@ -1,5 +1,5 @@
 from redhat/ubi9
-run yum install https -y
+run yum install httpd -y
 workdir /var/www/html/
 
 copy index.html .
